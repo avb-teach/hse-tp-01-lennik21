@@ -2,4 +2,7 @@
 input_dir="$1"
 output_dir="$2"
 
-find "$input_dir" -type f -exec cp {} "$output_dir" \;
+find "$input_dir" -type f | while read -r file; do
+  filename=$(basename "$file")
+  cp "$file" "$OUTPUT_DIR/$filename"
+done
