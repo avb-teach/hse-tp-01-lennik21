@@ -23,6 +23,6 @@ uni_name() {
 }
 find "$input_dir" -type f | while read -r filepath; do
   filename=$(basename "$filepath")
-  new_name=$(uni_name "$filename")
-  cp "$file" "$output_dir/$new_name"
+  n_name=$(uni_name "$filename")
+  cp "$file" "$output_dir/$n_name"
 done
